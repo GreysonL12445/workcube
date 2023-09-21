@@ -1,0 +1,9 @@
+//Code for work cube(box thingy)//
+
+#include <PRIZM.h>   //Link up the library//
+PRIZM blyat;         //Declare Object (reference to prizm)//
+
+void setup(){
+}
+void loop(){
+}

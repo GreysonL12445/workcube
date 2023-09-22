@@ -4,12 +4,13 @@
 PRIZM blyat;         //Declare Object (reference to prizm)//
 
 void setup(){
-    blyat.PrizmBegin();
-    blyat.setMotorPower(1,100);  //full speed
-    delay(2000);
-    blyat.setMotorPower(1,125);  //125 = brake
-    delay(2000);
+   blyat.PrizmBegin();
+  
+    
 }
 void loop(){
+   blyat.setMotorPower(2,100);  //full speed
+   delay(2000);
+   blyat.setMotorPower(2,125);  //125 = brake
+   delay(2000);
 }
-

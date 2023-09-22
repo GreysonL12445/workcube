@@ -1,0 +1,22 @@
+//Code for work cube(box thingy)//
+
+#include <PRIZM.h>   //Link up the library//
+PRIZM blyat;         //Declare Object (reference to prizm)//
+
+void setup(){
+   blyat.PrizmBegin();
+  
+    
+}
+void loop(){
+   blyat.setMotorPower(2,100);  //full speed
+   delay(1000);
+   blyat.setGreenLED(0);
+   blyat.setRedLED(1);
+   delay(400);
+   blyat.setMotorPower(2,125);  //125 = brake
+   delay(1000);
+   blyat.setRedLED(0);
+   blyat.setGreenLED(1);
+   delay(400);
+}

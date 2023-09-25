@@ -1,0 +1,14 @@
+#include <PRIZM.h>   //Link up the library//
+PRIZM blyat;         //Declare Object (reference to prizm)//
+
+void setup(){
+  blyat.PrizmBegin();
+  Serial.begin(9600);
+}
+void loop(){
+  int distance =  blyat.readSonicSensorCM(2);
+  Serial.print(distance);
+  Serial.print(" cm");
+  Serial.println();
+  delay(100);
+}

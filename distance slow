@@ -1,0 +1,13 @@
+#include <PRIZM.h>   //Link up the library//
+PRIZM blyat;         //Declare Object (reference to prizm)//
+
+void setup(){
+  blyat.PrizmBegin();
+  Serial.begin(9600);
+}
+void loop(){
+  int distance =  blyat.readSonicSensorCM(2);
+  int mappedValue = map(distance, 0, 300, 0, 100);
+  blyat.setMotorPower(2,mappedValue);
+  delay(500);
+}

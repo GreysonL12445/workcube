@@ -1,18 +1,27 @@
 #include <PRIZM.h> ;
 PRIZM blyat ;
-
 int counter = 0 ;
-
+bool isMorning = true;
+String myName = "Greyson Lobb";
 void setup() {
+  blyat.PrizmBegin();
   Serial.begin(9600);
-  Serial.println("start of Setup");
-   delay(1000);
+ // Serial.println("start of Setup");
+  // delay(1000);
 
 }
 
 void loop() {
   counter +=1 ;
-  Serial.println("Start of Loop" + String(conter));
-  Serial.println("end of Loop" + String(counter));
-  delay(1000);
+  //Serial.println("Start of Loop" + String(counter));
+  if (isMorning==true) {
+    Serial.println("Good Morning" + myName);
+    isMorning = false;
+  } else {
+    Serial.println("Good Afternoon" + myName);
+    isMorning = true;
+      }
+
+ delay(1000);
+  
 }

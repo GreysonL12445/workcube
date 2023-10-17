@@ -1,0 +1,42 @@
+
+#include <PRIZM.h>   //Link up the library//
+PRIZM blyat;         //Declare Object (reference to prizm)//
+
+void setup(){
+   blyat.PrizmBegin(); 
+   blyat.setMotorInvert(2,1);
+   blyat.setServoPosition(1,0);
+}
+void loop(){
+   forward();  //full speed
+   delay(2000);
+   pivotright();
+   delay(500);
+   forward();
+   delay(400);
+   pivotleft();
+   delay(450);
+   forward();
+   delay(930);
+   BRAKE();
+   delay(100);
+   blyat.setServoPosition(1,160);
+   delay(1000);
+   blyat.PrizmEnd();
+
+}
+void forward(){
+   blyat.setMotorPowers(100,100);
+}
+void backward(){
+   blyat.setMotorPowers(-100,-100);
+}
+void pivotright(){
+   blyat.setMotorPowers(125,100);
+}
+void pivotleft(){
+   blyat.setMotorPowers(100,125);
+}
+void BRAKE(){
+   blyat.setMotorPowers(125,125);
+}

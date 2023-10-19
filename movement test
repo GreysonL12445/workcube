@@ -40,3 +40,6 @@ void pivotleft(){
 void BRAKE(){
    blyat.setMotorPowers(125,125);
 }
+void STOP(){
+   blyat.PrizmEnd();
+}

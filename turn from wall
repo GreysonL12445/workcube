@@ -18,10 +18,8 @@ void loop(){
   delay(200);
   pivotright();
   delay(500);
+  }else{
   forward();
-  delay(10000);
-  }
-  STOP();
 }
 void forward(){
    blyat.setMotorPowers(100,100);

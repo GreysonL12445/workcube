@@ -1,0 +1,50 @@
+#include <PRIZM.h>   //Link up the library//
+PRIZM blyat;         //Declare Object (reference to prizm)//
+
+void setup(){
+  blyat.PrizmBegin();
+  Serial.begin(9600);
+  blyat.setMotorInvert(2,1);
+}
+void loop(){
+  int distance =  blyat.readSonicSensorCM(2);
+  Serial.print(distance);
+  Serial.print("cm");
+  Serial.println();
+  if(distance < 60){
+    forwardslow();
+      if(distance < 20){
+      BRAKE();
+      delay(50);
+      backward();
+      delay(200);
+      pivotright();
+      delay(500);
+    }else{
+    forward();
+  }
+ 
+}
+  }
+
+void forward(){
+   blyat.setMotorPowers(100,100);
+}
+void backward(){
+   blyat.setMotorPowers(-100,-100);
+}
+void pivotright(){
+   blyat.setMotorPowers(125,100);
+}
+void pivotleft(){
+   blyat.setMotorPowers(100,125);
+}
+void BRAKE(){
+   blyat.setMotorPowers(125,125);
+}
+void STOP(){
+   blyat.PrizmEnd();
+}
+void forwardslow(){
+  blyat.setMotorPowers(45,45);
+}

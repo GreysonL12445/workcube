@@ -13,13 +13,15 @@ void loop(){
   Serial.println();
   if(distance < 60){
     forwardslow();
-      if(distance < 20){
+      if(distance < 30){
+      forwardslower();
+      delay(70);
       BRAKE();
       delay(50);
       backward();
       delay(200);
       pivotright();
-      delay(500);
+      delay(600);
     }else{
     forward();
   }
@@ -47,4 +49,7 @@ void STOP(){
 }
 void forwardslow(){
   blyat.setMotorPowers(45,45);
+}
+void forwardslower(){
+  blyat.setMotorPowers(10,10);
 }
